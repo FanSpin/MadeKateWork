@@ -1,0 +1,66 @@
+
+
+  /* css for adjoining Make Kate work */
+   /* olive drab #6B8E23 (third color) */
+ 
+header  {
+	background-color: #808000;/* "olive" */
+}
+
+
+header  h2{
+
+	 font-size: 50px; 
+	 color: magenta;
+	  text-align: left;	  
+}
+
+ /*no change to body */
+body{
+	background-color: #556B2F; /*dark olive green */
+}
+
+body h1{
+	 font-size: 75px; 
+	 color: yellow;
+	  text-align: left;	  
+}
+body h2{
+	 font-size: 50px; 
+	 color: yellow;
+	  text-align: left;	  
+}
+
+body p {font-size: 25px;
+ font: Comic Sans MS, Comic Sans, cursive;/*Not Working */
+  color: yellow;
+  text-align: left;
+ }
+body img { float: right }
+
+  /* begin with box1 */
+
+.box1 {
+  border: 10px ridge #f00;
+  background-color: #6B8E23 ;/* olive #3  */
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.box1 img {
+  width: 300px;
+  height: 300px;
+  float: right;
+ 
+}
+
+.box1 p {
+  font: Comic Sans MS, Comic Sans, cursive;/*Not Working */
+  font: sans-serif;
+  text-align: left;
+  color: yellow;
+  float: left;
+}
+
+
+ /* Used pages A,B,C,D */
