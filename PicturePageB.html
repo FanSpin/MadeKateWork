@@ -36,80 +36,107 @@
     <main> <!-- Our page's main content -->
            <article> <!-- An article -->
         <h2>Kate Assembly</h2>
-<p>this is where we mention this ia all x86-64<br>
-linux<br
->not  6502 <br>
-list the projenitor website lost on hp510<br>
-list the other link (x86 assembly) lost on ga78
-<br>
-https://www.secureideas.com/blog/2021/05/linux-x86-assembly-how-to-build-a-hello-world-program-in-nasm.html
-<br><br><br><br></p>
+         <p>this is where we mention this ia all linux and
+         <a href="https://www.secureideas.com/blog/2021/04/a-hackers-tour-of-the-x86-cpu-architecture.html"> x86-64</a>
+        <br>similar language to, but not exactly, 6502 chip language<br></p>
+            <p>As previously mentioned our interest is making Kate do assembly,<br>
+                  without previous knolege or taking a class</p>
+            <p>  the same website also has "Hello World"
+                 Basic earch for <a href="https://www.secureideas.com/blog/2021/05/linux-x86-assembly-how-to-build-a-hello-world-program-in-nasm.html">Hello World</a> for "assembly"
 
-        <div class="box1"><!---saving this stuff for later  -->
-              <h1>saving this stuff for later   </h1>
-             <h2>lets leave behind the gibberish and go with brave answers still on trac phone paragraph</h2><!--(Outside Division) -->
-              <a href="TutsClassId"><img src=" /home/daniel/Documents/MadeKateWork/img/FigureA.PNG " alt="" title="" /></a><!--unknown notation / -->
-<p>start here(code):split into the above divs/boxes<!--(code)Outside Division-->
-<h2> this might still work</h2>
-		<p>daniel@hp510 /location/location/$ ls<br>
-		hello .asm<br>
-		me@hpc /location/location/$ nasm -f elf64 -o hello.o hello.asm<br>
-		me@hpc /location/location/$ <br>
-		me@hpc /location/location/$ ls<br>
-		hello.asm  hello.o<br>
-		me@hpc /location/location/$ man ld (--help)(not needed)<br>
-		me@hpc /location/location/$ ld hello.o -o hello<br>
-		me@hpc /location/location/$ <br>
-		me@hpc /location/location/$ ls<br>
-		(hello,green) hello.asm  hello.o  <br>
-		me@hpc /location/location/$ ./hello<br>
-		me@hpc /location/location/$Hello, World!<br>
-		</p>
-              <p>one line in a paragraph <br>
-o<p>Video Transcript<!--(transcript)Outside Division-->
-	open hello .asm in the editor<br>
-	</p><p>
-	next thing to do is compile our code<br>
-	so i am going to type into nasm DF164 <br>
-	this is assembly program format 164<br>
-	then i am going to type -o <br>
-	this is our output file name<br>
-	and were going to do hello.o and then were going to type<br>
-	our input file name which is hello.asm and now<br>
-	that will produce a file called hello.o
-	</p><p>
 
-	and<br>
-	we cannot execute a (.o) file <br>thats an object file<br>
-	we have to actually link it using a linker<br>
-	to make it an executable file<br>
-	</p><p>
-	so the linker is built into linux called "ld"<br>
-	you can see the GNU linker with ld --help or ld --version<br>
-	and were going to use this to link the object file<br>
-	so we can execute it<br>
-	</p><p>
-	so i am going to type into ld <br>
-	first the input file name <br>
-	hello.o -o <br>
-	and the output name which is going to be hello<br>
-	</p><p>
-	now we can see we have produced hello<br>
-	highlighted green with no extension<br>
-	</p><p>
-	green means exacutable<br>
-	so we exacute it with ./hello<br>
-	as you see terminal shows Hello, World!<br>
-
-	</p>
+               <table class="darkTable">
+<thead>
+<tr>
+<th>head1</th>
+<th>head2</th>
+<th>head3</th>
+<th>head4</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td>foot1</td>
+<td>foot2</td>
+<td>foot3</td>
+<td>foot4</td>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+<td>cell1_1</td><td>cell2_1</td><td>cell3_1</td><td>cell4_1</td></tr>
+<tr>
+<td>cell1_2</td><td>cell2_2</td><td>cell3_2</td><td>cell4_2</td></tr>
+<tr>
+<td>cell1_3</td><td>cell2_3</td><td>cell3_3</td><td>cell4_3</td></tr>
+<tr>
+<td>cell1_4</td><td>cell2_4</td><td>cell3_4</td><td>cell4_4</td></tr>
+<tr>
+<td>cell1_5</td><td>cell2_5</td><td>cell3_5</td><td>cell4_5</td></tr>
+</tbody>
+</tr>
+</table>
 
 
 
-		</div>
+      <div class="box1"><!---saving this stuff for later  -->
+          empty div   empty div <br>
+          empty div   empty div  <br>
+          empty div   empty div <br>
 
-      </article>
+        </div>
 
-      <!-- the aside content can also be nested within the main content -->
+
+
+
+
+        <p>Q/A from our "Brave Answers (Ai chat box)"<br>
+			“list deceives like NASM assembly and various<br>
+			files like objects (.o) involved in compiling "hello world"<br>
+			in assembly”<br>
+			The main deliverables in a NASM "hello world" build are<br>
+			the source, the object file, and the final executable,<br>
+			with an optional listing. Here's the pipeline and each file:</p>
+
+
+			<table>
+  <tr>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+  </tr>
+</table>
+
+   <p>
+                 <img src=" /home/daniel/Documents/NoRepoMadeKate/img/FigureB.png" alt="" title="" >
+                me@hpc/location/location/$ ls<br>
+                hello .asm<br>
+                me@hpc /location/location/$ nasm -f elf64 -o hello.o hello.asm<br>
+                me@hpc /location/location/$ <br>
+                me@hpc /location/location/$ ls<br>
+                hello.asm  hello.o<br>
+                me@hpc /location/location/$ man ld (--help)(not needed)<br>
+                me@hpc /location/location/$ ld hello.o -o hello<br>
+                me@hpc /location/location/$ <br>
+                me@hpc /location/location/$ ls<br>
+                (hello,green) hello.asm  hello.o  <br>
+                me@hpc /location/location/$ ./hello<br>
+                me@hpc /location/location/$Hello, World!<br>
+
+                </p>
+
+        </article>
+<!-- the aside content can also be nested within the main content -->
       <aside>
         <h2>Related</h2>
 
