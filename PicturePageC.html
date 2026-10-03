@@ -1,0 +1,137 @@
+<!-- The main Template used across all the pages of our website -->
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Kate-C</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="styles3.css" />
+  </head>
+
+  <body>
+    <!-- The main header used across all the pages of our website -->
+    <header> <!-- very top: olive and yellow -->
+       <h1><a href="url">MadeKateWork</a></h1>
+    </header> <!-- very top: olive and yellow  -->
+    <nav> <!-- links and search -->
+      <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="#">Our team</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+
+      <!-- A Search form: another common non-linear
+           way to navigate through a site. -->
+
+      <form>
+        <input type="search" name="q" placeholder="Search query" />
+        <input type="submit" value="Go!" />
+      </form>
+    </nav> <!-- links and search -->
+    <main> <!-- Our page's main content -->
+           <article> <!-- An article -->
+        <h2>MadeKate c</h2>
+         <p>found another
+         <a href="https://www.youtube.com/watch?v=1UZNvhodgmw">video</a>
+         with bad audio, per usual<br>
+         As previously mentioned our interest is making Kate do .c<br>
+                  without previous knowledge or taking a class
+        </p>
+        <p>certainly  "Hello World" in .c will be on a
+          <a href="https://github.com/FanSpin/HelloC/blob/main/hello3.c">git remote</a><br>
+          and we can ask the internet for the instrucions
+      <div class="box1"><!---saving this stuff for later  -->
+              <p>
+            <i>"list the and explain the steps needed<br>
+            to compile c -language hello world <br>
+            including various filetypes <br>
+            (e.g. source code, CMakeList, objects)""</i>
+          </p>
+      </div>
+<div class="box1"><!---saving this stuff for later  -->
+            <h2>The Four Compilation Phases</h2>
+      </div>
+      <table class="darkTable">
+      <thead>
+      <tr>
+      <th>File</th>
+      <th>Extension</th>
+      <th>What it is</th>
+      <th>Produced by</th>
+      </tr>
+      </thead>
+      <tfoot>
+      <tr>
+      <td>Executable</td>
+      <td>hello, a.out, or<br> hello.exe</td>
+      <td>Final linked, runnable binary</td>
+      <td>d (or gcc)</td>
+      </tr>
+      </tfoot>
+      <tbody>
+      <tr>
+      <td>Source</td><td>.asm</td><td>Hand written assembly (hello.asm)</td><td>you</td>
+      </tr>
+      <tr>
+      <td>Object</td><td>.o (Linux/ELF)</td><td>Relocatable machine code, not yet linked; <br>can't be run directly</td><td>nasm <br>(assembler)</td>
+      </tr>
+      <tr>
+      <td>Listing</td><td>hello, a.out, or<br> hello.exe</td><td>Final linked, runnable binary</td><td>ld (or gcc)</td>
+      </tr>
+
+      </tbody>
+      </tr>
+      </table>
+<div class="box1"><!---saving this stuff for later  -->
+              <p>
+          Preprocessing — Expands #include directives (inlines stdio.h),<br>
+          replaces #define macros, and strips comments. <br>
+          The output is a plain C file (.i) with all directives resolved.<br><br>
+          Compilation — Translates the preprocessed C into assembly language (.s). <br>
+          This is where syntax errors are caught and optimizations are applied.<br><br>
+          Assembly — Converts the assembly (.s) into machine code, <br>
+          producing an object file (.o). The object file contains binary <br>
+          instructions but has unresolved references (e.g., printf is not yet linked).<br><br>
+          Linking — Combines all object files with required libraries<br>
+          (e.g., libc for printf) to resolve all symbols and produce <br>
+          the final executable (no extension on Linux, .exe on Windows).<br>
+          </p>
+      </div>
+          <p>
+            <img src="/home/daniel/Documents/NoRepoMadeKate/img/FigureC.png" alt="" title="" >
+             <h2>subtitle</h2>
+             <p> new paragraph<br>
+         new paragraph
+           </p>
+         <p>
+         new paragraph<br>
+         new paragraph
+          </p>
+
+        </article>
+<!-- the aside content can also be nested within the main content -->
+      <aside>
+        <h2>Related</h2>
+
+        <ul>
+          <li><a href="#">Oh I do like to be beside the seaside</a></li>
+          <li><a href="#">Oh I do like to be beside the sea</a></li>
+          <li><a href="#">Although in the North of England</a></li>
+          <li><a href="#">It never stops raining</a></li>
+          <li><a href="#">Oh well…</a></li>
+        </ul>
+      </aside>
+    </main>
+
+    <!-- The footer that is used across all the pages of our website -->
+
+    <footer>
+      <p>©Copyright 2050 by nobody. All rights reversed.</p>
+    </footer>
+  </body>
+</html>
