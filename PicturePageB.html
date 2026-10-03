@@ -40,100 +40,96 @@
          <a href="https://www.secureideas.com/blog/2021/04/a-hackers-tour-of-the-x86-cpu-architecture.html"> x86-64</a>
         <br>similar language to, but not exactly, 6502 chip language<br></p>
             <p>As previously mentioned our interest is making Kate do assembly,<br>
-                  without previous knolege or taking a class</p>
+                  without previous knowledge or taking a class</p>
             <p>  the same website also has "Hello World"
                  Basic earch for <a href="https://www.secureideas.com/blog/2021/05/linux-x86-assembly-how-to-build-a-hello-world-program-in-nasm.html">Hello World</a> for "assembly"
-
-
-               <table class="darkTable">
-<thead>
-<tr>
-<th>head1</th>
-<th>head2</th>
-<th>head3</th>
-<th>head4</th>
-</tr>
-</thead>
-<tfoot>
-<tr>
-<td>foot1</td>
-<td>foot2</td>
-<td>foot3</td>
-<td>foot4</td>
-</tr>
-</tfoot>
-<tbody>
-<tr>
-<td>cell1_1</td><td>cell2_1</td><td>cell3_1</td><td>cell4_1</td></tr>
-<tr>
-<td>cell1_2</td><td>cell2_2</td><td>cell3_2</td><td>cell4_2</td></tr>
-<tr>
-<td>cell1_3</td><td>cell2_3</td><td>cell3_3</td><td>cell4_3</td></tr>
-<tr>
-<td>cell1_4</td><td>cell2_4</td><td>cell3_4</td><td>cell4_4</td></tr>
-<tr>
-<td>cell1_5</td><td>cell2_5</td><td>cell3_5</td><td>cell4_5</td></tr>
-</tbody>
-</tr>
-</table>
-
-
-
       <div class="box1"><!---saving this stuff for later  -->
-          empty div   empty div <br>
-          empty div   empty div  <br>
-          empty div   empty div <br>
-
-        </div>
-
-
-
-
-
-        <p>Q/A from our "Brave Answers (Ai chat box)"<br>
+              <p>Q/A from our "Brave browser (Ai chat box)"<br><br>
+              <i>
 			“list deceives like NASM assembly and various<br>
 			files like objects (.o) involved in compiling "hello world"<br>
-			in assembly”<br>
+			in assembly”<br><br>
+			</i>
 			The main deliverables in a NASM "hello world" build are<br>
 			the source, the object file, and the final executable,<br>
-			with an optional listing. Here's the pipeline and each file:</p>
+			with an optional listing. Here's the pipeline and each file:
+          </p>
+      </div>
 
+      <table class="darkTable">
+      <thead>
+      <tr>
+      <th>File</th>
+      <th>Extension</th>
+      <th>What it is</th>
+      <th>Produced by</th>
+      </tr>
+      </thead>
+      <tfoot>
+      <tr>
+      <td>Executable</td>
+      <td>hello, a.out, or<br> hello.exe</td>
+      <td>Final linked, runnable binary</td>
+      <td>d (or gcc)</td>
+      </tr>
+      </tfoot>
+      <tbody>
+      <tr>
+      <td>Source</td><td>.asm</td><td>Hand written assembly (hello.asm)</td><td>you</td>
+      </tr>
+      <tr>
+      <td>Object</td><td>.o (Linux/ELF)</td><td>Relocatable machine code, not yet linked; <br>can't be run directly</td><td>nasm <br>(assembler)</td>
+      </tr>
+      <tr>
+      <td>Listing</td><td>hello, a.out, or<br> hello.exe</td><td>Final linked, runnable binary</td><td>ld (or gcc)</td>
+      </tr>
 
-			<table>
-  <tr>
-    <th>Company</th>
-    <th>Contact</th>
-    <th>Country</th>
-  </tr>
-  <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
-  </tr>
-  <tr>
-    <td>Centro comercial Moctezuma</td>
-    <td>Francisco Chang</td>
-    <td>Mexico</td>
-  </tr>
-</table>
+      </tbody>
+      </tr>
+      </table>
+<div class="box1"><!---saving this stuff for later  -->
+              <p>
+             Typical Linux (ELF) flow:<br>
+nasm -f elf32 hello.asm # -> hello.o<br>
+ld -m elf_i386 hello.o -o hello # -> hello (run with ./hello)<br><br>
 
-   <p>
-                 <img src=" /home/daniel/Documents/NoRepoMadeKate/img/FigureB.png" alt="" title="" >
-                me@hpc/location/location/$ ls<br>
-                hello .asm<br>
-                me@hpc /location/location/$ nasm -f elf64 -o hello.o hello.asm<br>
-                me@hpc /location/location/$ <br>
-                me@hpc /location/location/$ ls<br>
-                hello.asm  hello.o<br>
-                me@hpc /location/location/$ man ld (--help)(not needed)<br>
-                me@hpc /location/location/$ ld hello.o -o hello<br>
-                me@hpc /location/location/$ <br>
-                me@hpc /location/location/$ ls<br>
-                (hello,green) hello.asm  hello.o  <br>
-                me@hpc /location/location/$ ./hello<br>
-                me@hpc /location/location/$Hello, World!<br>
+Key points:<br>
+The -f flag tells nasm the object format:<br>
+elf/elf64 (Linux), win32/win64 (Windows), macho64 (macOS).<br><br>
 
-                </p>
+The .o file is an ELF relocatable (e.g. "ELF 32-bit LSB relocatable,<br>
+Intel 80386") — it contains the machine code plus extra sections<br>
+the linker needs, but it cannot be executed until linked.<br><br>
+
+If you only use direct syscalls (write, exit), you link straight with ld.<br>
+If you call C functions like printf, you link with gcc so the<br>
+C runtime is pulled in.<br><br>
+
+The entry point is _start (standalone) or<br>
+main (when using gcc's C runtime).<br><br>
+
+So the core deliverables are: .asm → .o/.obj → executable (plus an optional .lst).
+
+          </p>
+      </div>
+          <p>
+            <img src=" /home/daniel/Documents/NoRepoMadeKate/img/FigureB.png" alt="" title="" >
+             <h2>our attempt (actual compile code)</h2>
+             <p>.asm file exists elswere</p>
+         <p> me@hpc/location/location/$ ls<br>
+          hello .asm<br>
+          me@hpc /location/location/$ nasm -f elf64 -o hello.o hello.asm<br>
+          me@hpc /location/location/$ <br>
+          me@hpc /location/location/$ ls<br>
+          hello.asm  hello.o<br>
+          me@hpc /location/location/$ man ld (--help)(not needed)<br>
+          me@hpc /location/location/$ ld hello.o -o hello<br>
+          me@hpc /location/location/$ <br>
+          me@hpc /location/location/$ ls<br>
+          (hello,green) hello.asm  hello.o  <br>
+          me@hpc /location/location/$ ./hello<br>
+          me@hpc /location/location/$Hello, World!<br>
+          </p>
 
         </article>
 <!-- the aside content can also be nested within the main content -->
