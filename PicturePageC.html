@@ -57,36 +57,37 @@
             <h2>The Four Compilation Phases</h2>
       </div>
       <table class="darkTable">
-      <thead>
-      <tr>
-      <th>File</th>
-      <th>Extension</th>
-      <th>What it is</th>
-      <th>Produced by</th>
-      </tr>
-      </thead>
-      <tfoot>
-      <tr>
-      <td>Executable</td>
-      <td>hello, a.out, or<br> hello.exe</td>
-      <td>Final linked, runnable binary</td>
-      <td>d (or gcc)</td>
-      </tr>
-      </tfoot>
-      <tbody>
-      <tr>
-      <td>Source</td><td>.asm</td><td>Hand written assembly (hello.asm)</td><td>you</td>
-      </tr>
-      <tr>
-      <td>Object</td><td>.o (Linux/ELF)</td><td>Relocatable machine code, not yet linked; <br>can't be run directly</td><td>nasm <br>(assembler)</td>
-      </tr>
-      <tr>
-      <td>Listing</td><td>hello, a.out, or<br> hello.exe</td><td>Final linked, runnable binary</td><td>ld (or gcc)</td>
-      </tr>
+<thead>
+<tr>
+<th>head1</th>
+<th>head2</th>
+<th>head3</th>
+<th>head4</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td>foot1</td>
+<td>foot2</td>
+<td>foot3</td>
+<td>foot4</td>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+<td>cell1_1</td><td>cell2_1</td><td>cell3_1</td><td>cell4_1</td></tr>
+<tr>
+<td>cell1_2</td><td>cell2_2</td><td>cell3_2</td><td>cell4_2</td></tr>
+<tr>
+<td>cell1_3</td><td>cell2_3</td><td>cell3_3</td><td>cell4_3</td></tr>
+<tr>
+<td>cell1_4</td><td>cell2_4</td><td>cell3_4</td><td>cell4_4</td></tr>
+<tr>
+<td>cell1_5</td><td>cell2_5</td><td>cell3_5</td><td>cell4_5</td></tr>
+</tbody>
+</tr>
+</table>
 
-      </tbody>
-      </tr>
-      </table>
 <div class="box1"><!---saving this stuff for later  -->
               <p>
           Preprocessing — Expands #include directives (inlines stdio.h),<br>
@@ -104,20 +105,56 @@
       </div>
           <p>
             <img src="/home/daniel/Documents/NoRepoMadeKate/img/FigureC.png" alt="" title="" >
-             <h2>subtitle</h2>
-             <p> new paragraph<br>
-         new paragraph
-           </p>
-         <p>
-         new paragraph<br>
-         new paragraph
-          </p>
+
 
         </article>
 <!-- the aside content can also be nested within the main content -->
       <aside>
-        <h2>Related</h2>
-
+        <h2>Our Attempt</h2>
+            <p>the source code will be on our
+              <a href="https://github.com/FanSpin/HelloC/blob/main/hello3.c">repositoriy</a>.
+              listed below will be the (simple version)<br>
+              command line to see if we got it to work. We did learn CMakeList too.<br>
+              it's not simple, at all
+            </p>
+            <p>
+            #include <stdio.h><br>
+              int main()<br>
+              {<br>
+                  fprintf(stdout, "hello, world\n");<br>
+                  return 1;<br>
+              }<br>
+              // Compile, then run: gcc hello.c -o hello<br>
+              // Then run: ./hello<br>
+              // stdout.txt should contain "hello, world"<br>
+              // Your `echo $?` command should return 1
+            </p>
+            <p>
+            d@ga78:~/Downloads/RunHello$ gcc hello.c -o hello<br>
+            d@ga78:~/Downloads/RunHello$ ./hello<br>
+            hello, world<br>
+            d@ga78:~/Downloads/RunHello$<br>
+          </p>
+          <h2>CMakeList version</h2>
+          <p>
+              d@ga78:~/Downloads/CrunHello$ cmake -S . -B build<br>
+              -- The C compiler identification is GNU 13.3.0<br>
+              -- Detecting C compiler ABI info<br>
+              -- Detecting C compiler ABI info - done<br>
+              -- Check for working C compiler: /usr/bin/cc - skipped<br>
+              -- Detecting C compile features<br>
+              -- Detecting C compile features - done<br>
+              -- Configuring done (0.4s)<br>
+              -- Generating done (0.0s)<br>
+              -- Build files have been written to: /home/User/Downloads/CrunHello/build<br>
+              d@ga78:~/Downloads/CrunHello$ cmake --build build<br>
+              [ 50%] Building C object CMakeFiles/hello.dir/hello.c.o<br>
+              [100%] Linking C executable hello<br>
+              [100%] Built target hello<br>
+              d@ga78:~/Downloads/CrunHello$ ./build/hello<br>
+              hello, world<br>
+              d@ga78:~/Downloads/CrunHello$<br>
+          </p>
         <ul>
           <li><a href="#">Oh I do like to be beside the seaside</a></li>
           <li><a href="#">Oh I do like to be beside the sea</a></li>
